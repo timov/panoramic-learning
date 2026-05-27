@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="flag-icons.min.css">
+
   <style>
     /* ===== FOR COMPANIES - PAGE-SPECIFIC STYLES ===== */
     .hero.page-hero { min-height: 72vh; }
@@ -189,6 +191,8 @@
 
       <div class="hero-visual slide-in-right">
         <div class="hero-card hero-card--main business-bg">
+          <!-- Blurred full image background -->
+          <div style="position:absolute;inset:0;background:url('images/business-team.jpg') center/contain no-repeat #0d2a45;filter:blur(6px) brightness(0.45);z-index:0;"></div>
           <div class="hero-card-icon">&#x1F4BC;</div>
           <p class="hero-card-quote">&ldquo;Investing in your people&rsquo;s language is investing in your company&rsquo;s future.&rdquo;</p>
           <p class="hero-card-author">Tailored for international teams</p>
@@ -501,14 +505,14 @@
       <div class="sa-lang-split fade-up">
 
         <div class="sa-lang-block">
-          <div class="sa-lang-label"><img src="images/flags/gb.svg" alt="UK flag" style="width:1.5em;height:1em;vertical-align:middle;margin-right:7px;">English</div>
+          <div class="sa-lang-label"><i class="fi fi-gb"></i> English</div>
           <p>We have extensive experience teaching Dutch to South Africans whose first languages are Afrikaans and/or English.</p>
           <p>Our tutors understand which aspects of Dutch are less relevant for South Africans and which require extra attention for this specific group. Reading and listening are often relatively easy for Afrikaans speakers, while writing and speaking can be much more challenging.</p>
           <p>We offer a wide range of tips tailored to this group, including guidance on correct pronunciation of Dutch sounds.</p>
         </div>
 
         <div class="sa-lang-block sa-lang-block--afrikaans">
-          <div class="sa-lang-label"><img src="images/flags/za.svg" alt="South Africa flag" style="width:1.5em;height:1em;vertical-align:middle;margin-right:7px;">Afrikaans</div>
+          <div class="sa-lang-label"><i class="fi fi-za"></i> Afrikaans</div>
           <p>Ons het uitgebreide ervaring met die onderrig van Nederlands aan Suid-Afrikaners wie se eerste tale Afrikaans of Engels is.</p>
           <p>Ons tutors weet dus watter aspekte van die Nederlandse taal minder relevant is vir Suid-Afrikaners, en watter meer aandag vereis vir hierdie spesiale groep. Lees en luister is dikwels maklik vir Afrikaanssprekendes, terwyl skryf en praat aansienlike uitdagings bied.</p>
           <p>Ons het allerhande wenke gereed vir hierdie groep, ook wanneer dit kom by die korrekte uitspraak van Nederlandse klanke.</p>

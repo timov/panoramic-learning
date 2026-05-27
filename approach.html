@@ -5,21 +5,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Approach - Panoramic Learning</title>
-  <meta name="description" content="Private Dutch lessons via Google Meet. 55 minutes, flexible scheduling, one dedicated tutor. All CEFR levels A0 to C1. 99.7% NT2 pass rate." />
+  <meta name="description"
+    content="Private Dutch lessons via Google Meet. 55 minutes, flexible scheduling, one dedicated tutor. All CEFR levels A0 to C1. 99.7% NT2 pass rate." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="flag-icons.min.css">
   <style>
     /* ===== OUR APPROACH - PAGE-SPECIFIC STYLES ===== */
+    .hero-card.hero-card--main {
+      background-image: url('images/approach.png');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid rgba(255, 255, 255, .2);
+      min-width: 450px;
+    }
 
     /* Shorter hero for inner pages */
-    .hero.page-hero { min-height: 72vh; }
+    .hero.page-hero {
+      min-height: 72vh;
+    }
 
     /* Active nav link */
-    .main-menu a.nav-active { color: var(--clr-accent) !important; font-weight: 600; }
+    .main-menu a.nav-active {
+      color: var(--clr-accent) !important;
+      font-weight: 600;
+    }
 
     /* ---------- HOW WE WORK: 3x3 feature cards ---------- */
     .approach-grid {
@@ -28,6 +44,7 @@
       gap: 24px;
       margin-top: 48px;
     }
+
     .approach-card {
       background: #fff;
       border-radius: var(--radius-lg);
@@ -39,12 +56,23 @@
       gap: 10px;
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
-    .approach-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .approach-card--accent {
-      border-color: rgba(26,122,191,0.28);
-      background: linear-gradient(145deg, rgba(26,122,191,0.04), rgba(26,122,191,0.09));
+
+    .approach-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
     }
-    .approach-card-icon { font-size: 2.2rem; line-height: 1; margin-bottom: 2px; }
+
+    .approach-card--accent {
+      border-color: rgba(26, 122, 191, 0.28);
+      background: linear-gradient(145deg, rgba(26, 122, 191, 0.04), rgba(26, 122, 191, 0.09));
+    }
+
+    .approach-card-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
     .approach-card h3 {
       font-family: var(--font-heading);
       font-size: 1.05rem;
@@ -52,7 +80,13 @@
       margin: 0;
       font-weight: 600;
     }
-    .approach-card p { font-size: 0.9rem; color: var(--clr-mid); margin: 0; line-height: 1.65; }
+
+    .approach-card p {
+      font-size: 0.9rem;
+      color: var(--clr-mid);
+      margin: 0;
+      line-height: 1.65;
+    }
 
     /* ---------- LEVELS: 3 cards, middle featured ---------- */
     .levels-grid {
@@ -62,6 +96,7 @@
       margin-top: 48px;
       align-items: start;
     }
+
     .level-card {
       border-radius: var(--radius-xl);
       padding: 36px 28px;
@@ -75,17 +110,26 @@
       overflow: hidden;
       transition: transform 0.22s, box-shadow 0.22s;
     }
-    .level-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+    .level-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
     .level-card--featured {
       background: linear-gradient(150deg, #0d4a7a 0%, #1a7abf 60%, #2596d4 100%);
       border-color: transparent;
       transform: scale(1.05);
-      box-shadow: 0 20px 60px rgba(13,74,122,0.30);
+      box-shadow: 0 20px 60px rgba(13, 74, 122, 0.30);
     }
-    .level-card--featured:hover { transform: scale(1.05) translateY(-4px); }
+
+    .level-card--featured:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+
     .level-badge {
       display: inline-flex;
-      background: rgba(26,122,191,0.10);
+      background: rgba(26, 122, 191, 0.10);
       color: var(--clr-primary);
       font-weight: 700;
       font-size: 0.73rem;
@@ -95,7 +139,12 @@
       border-radius: 999px;
       width: fit-content;
     }
-    .level-card--featured .level-badge { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); }
+
+    .level-card--featured .level-badge {
+      background: rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
     .level-range {
       font-family: var(--font-heading);
       font-size: 2.4rem;
@@ -103,16 +152,64 @@
       color: var(--clr-primary);
       line-height: 1;
     }
-    .level-card--featured .level-range { color: #a8d8f5; }
-    .level-card h3 { font-family: var(--font-heading); font-size: 1.25rem; color: var(--clr-dark); margin: 0; }
-    .level-card--featured h3 { color: #fff; }
-    .level-card > p { font-size: 0.88rem; color: var(--clr-mid); line-height: 1.6; margin: 0; }
-    .level-card--featured > p { color: rgba(255,255,255,0.75); }
-    .level-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .level-card ul li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.87rem; color: var(--clr-dark); }
-    .level-card ul li::before { content: '\2713'; color: var(--clr-primary); font-weight: 700; flex-shrink: 0; }
-    .level-card--featured ul li { color: rgba(255,255,255,0.9); }
-    .level-card--featured ul li::before { color: #a8d8f5; }
+
+    .level-card--featured .level-range {
+      color: #a8d8f5;
+    }
+
+    .level-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--clr-dark);
+      margin: 0;
+    }
+
+    .level-card--featured h3 {
+      color: #fff;
+    }
+
+    .level-card>p {
+      font-size: 0.88rem;
+      color: var(--clr-mid);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .level-card--featured>p {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .level-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .level-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.87rem;
+      color: var(--clr-dark);
+    }
+
+    .level-card ul li::before {
+      content: '\2713';
+      color: var(--clr-primary);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .level-card--featured ul li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .level-card--featured ul li::before {
+      color: #a8d8f5;
+    }
 
     /* ---------- CERTIFICATE ---------- */
     .cert-wrap {
@@ -121,60 +218,159 @@
       gap: 64px;
       align-items: center;
     }
-    .cert-visual { display: flex; justify-content: center; }
+
+    .cert-visual {
+      display: flex;
+      justify-content: center;
+    }
+
     .cert-card {
       background: #fff;
       border-radius: var(--radius-xl);
-      box-shadow: 0 10px 50px rgba(13,74,122,0.16);
+      box-shadow: 0 10px 50px rgba(13, 74, 122, 0.16);
       padding: 44px 36px;
       text-align: center;
-      border: 2px solid rgba(26,122,191,0.14);
+      border: 2px solid rgba(26, 122, 191, 0.14);
       position: relative;
       max-width: 380px;
       width: 100%;
     }
+
     /* Corner decorations */
-    .cert-card::before, .cert-card::after {
-      content: ''; position: absolute; width: 30px; height: 30px;
-      border-color: rgba(26,122,191,0.22); border-style: solid;
+    .cert-card::before,
+    .cert-card::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-color: rgba(26, 122, 191, 0.22);
+      border-style: solid;
     }
-    .cert-card::before { top: 14px; left: 14px; border-width: 2px 0 0 2px; }
-    .cert-card::after  { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; }
+
+    .cert-card::before {
+      top: 14px;
+      left: 14px;
+      border-width: 2px 0 0 2px;
+    }
+
+    .cert-card::after {
+      bottom: 14px;
+      right: 14px;
+      border-width: 0 2px 2px 0;
+    }
+
     .cert-seal {
-      width: 68px; height: 68px;
-      background: linear-gradient(135deg, #0d4a7a, #1a7abf);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px; font-size: 1.9rem;
-      box-shadow: 0 6px 20px rgba(13,74,122,0.28);
+      width: 68px;
+      height: 68px;
+      background-image: url('images/logo.png');
+      background-size: cover;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.9rem;
+      box-shadow: 0 6px 20px rgba(13, 74, 122, 0.28);
     }
-    .cert-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--clr-light); margin-bottom: 6px; }
-    .cert-title { font-family: var(--font-heading); font-size: 1.3rem; color: var(--clr-dark); margin-bottom: 0; }
-    .cert-divider { border: none; border-top: 1px solid var(--clr-border); margin: 16px 0; }
-    .cert-subtitle { font-size: 0.8rem; color: var(--clr-light); margin-bottom: 8px; }
-    .cert-name { font-family: var(--font-heading); font-size: 1.7rem; font-style: italic; color: var(--clr-primary); margin: 4px 0 14px; }
+
+    .cert-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--clr-light);
+      margin-bottom: 6px;
+    }
+
+    .cert-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--clr-dark);
+      margin-bottom: 0;
+    }
+
+    .cert-divider {
+      border: none;
+      border-top: 1px solid var(--clr-border);
+      margin: 16px 0;
+    }
+
+    .cert-subtitle {
+      font-size: 0.8rem;
+      color: var(--clr-light);
+      margin-bottom: 8px;
+    }
+
+    .cert-name {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      font-style: italic;
+      color: var(--clr-primary);
+      margin: 4px 0 14px;
+    }
+
     .cert-level-badge {
-      font-size: 0.85rem; font-weight: 600; color: var(--clr-dark);
-      background: var(--clr-bg-alt); padding: 5px 16px;
-      border-radius: 999px; border: 1px solid var(--clr-border); display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--clr-dark);
+      background: var(--clr-bg-alt);
+      padding: 5px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--clr-border);
+      display: inline-block;
     }
+
     .cert-footer-line {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--clr-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--clr-border);
     }
-    .cert-logo-img { height: 26px; }
-    .cert-year { font-size: 0.75rem; color: var(--clr-light); }
+
+    .cert-logo-img {
+      height: 26px;
+    }
+
+    .cert-year {
+      font-size: 0.75rem;
+      color: var(--clr-light);
+    }
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 960px) {
-      .approach-grid { grid-template-columns: repeat(2, 1fr); }
-      .levels-grid { grid-template-columns: 1fr; }
-      .level-card--featured { transform: none; }
-      .level-card--featured:hover { transform: translateY(-4px); }
-      .cert-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .levels-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .level-card--featured {
+        transform: none;
+      }
+
+      .level-card--featured:hover {
+        transform: translateY(-4px);
+      }
+
+      .cert-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
     }
+
     @media (max-width: 600px) {
-      .approach-grid { grid-template-columns: 1fr; }
-      .hero.page-hero { min-height: 60vh; }
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero.page-hero {
+        min-height: 60vh;
+      }
     }
   </style>
 </head>
@@ -218,7 +414,8 @@
       <div class="hero-content slide-in-left">
         <p class="hero-eyebrow">How We Teach</p>
         <h1 class="hero-title">Our <em style="font-style:italic;color:#a8d8f5;">Approach</em></h1>
-        <p class="hero-sub">Private, personal, and flexible Dutch lessons designed for real, lasting results. Online via Google Meet, available to learners worldwide.</p>
+        <p class="hero-sub">Private, personal, and flexible Dutch lessons designed for real, lasting results. Online via
+          Google Meet, available to learners worldwide.</p>
         <div class="hero-actions fade-up anim-delay-1">
           <a href="index.html#booking" class="btn btn-primary">Book Your First Lesson</a>
           <a href="#how-we-work" class="btn btn-outline">See How It Works</a>
@@ -232,25 +429,7 @@
 
       <!-- Right: CEFR journey card + floating badges -->
       <div class="hero-visual slide-in-right">
-        <div class="hero-card hero-card--main">
-          <div class="hero-card-icon">&#x1F393;</div>
-          <p class="hero-card-quote">&ldquo;Your journey from first word to full fluency.&rdquo;</p>
-          <!-- CEFR level path -->
-          <div style="display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:16px;">
-            <span style="background:rgba(255,255,255,0.15);color:#a8d8f5;font-weight:700;font-size:0.78rem;padding:4px 11px;border-radius:999px;">A0</span>
-            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">&#x2192;</span>
-            <span style="background:rgba(255,255,255,0.15);color:#a8d8f5;font-weight:700;font-size:0.78rem;padding:4px 11px;border-radius:999px;">A1</span>
-            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">&#x2192;</span>
-            <span style="background:rgba(255,255,255,0.15);color:#a8d8f5;font-weight:700;font-size:0.78rem;padding:4px 11px;border-radius:999px;">A2</span>
-            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">&#x2192;</span>
-            <span style="background:rgba(255,255,255,0.15);color:#a8d8f5;font-weight:700;font-size:0.78rem;padding:4px 11px;border-radius:999px;">B1</span>
-            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">&#x2192;</span>
-            <span style="background:rgba(255,255,255,0.15);color:#a8d8f5;font-weight:700;font-size:0.78rem;padding:4px 11px;border-radius:999px;">B2</span>
-            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">&#x2192;</span>
-            <span style="background:rgba(168,216,245,0.22);color:#fff;font-weight:800;font-size:0.78rem;padding:4px 11px;border-radius:999px;border:1px solid rgba(255,255,255,0.32);">C1</span>
-          </div>
-          <p class="hero-card-author" style="margin-top:14px;">All levels taught by expert Dutch tutors</p>
-        </div>
+        <div class="hero-card hero-card--main"></div>
         <div class="hero-card hero-card--float hero-card--float-1">
           <span class="badge-dot badge-dot--green"></span>
           <span>55 min per lesson</span>
@@ -263,10 +442,12 @@
     </div>
 
     <!-- Logo watermark decorations -->
-    <div aria-hidden="true" style="position:absolute;left:-180px;bottom:-90px;opacity:0.13;z-index:0;pointer-events:none;">
+    <div aria-hidden="true"
+      style="position:absolute;left:-180px;bottom:-90px;opacity:0.13;z-index:0;pointer-events:none;">
       <img src="images/black-logo.png" alt="" style="width:600px;height:auto;display:block;" />
     </div>
-    <div aria-hidden="true" style="position:absolute;right:-180px;bottom:-90px;opacity:0.13;z-index:0;pointer-events:none;">
+    <div aria-hidden="true"
+      style="position:absolute;right:-180px;bottom:-90px;opacity:0.13;z-index:0;pointer-events:none;">
       <img src="images/black-logo.png" alt="" style="width:600px;height:auto;display:block;" />
     </div>
 
@@ -291,7 +472,8 @@
       <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" />
     </svg>
     <!-- filled tulip, bottom-left -->
-    <svg class="section-tulip-deco st-about-2" aria-hidden="true" viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="section-tulip-deco st-about-2" aria-hidden="true" viewBox="0 0 80 200"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M40,200 L40,110" fill="none" stroke="rgba(26,122,191,0.14)" stroke-width="2" stroke-linecap="round" />
       <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" fill="rgba(26,122,191,0.09)" />
       <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" fill="rgba(26,122,191,0.09)" />
@@ -304,7 +486,8 @@
       <div class="section-header fade-up">
         <p class="section-eyebrow">How We Teach</p>
         <h2 class="section-title">Private, Personal, <em>Flexible</em></h2>
-        <p class="section-sub">Every element of our lessons is designed around one goal: your progress, at your pace.</p>
+        <p class="section-sub">Every element of our lessons is designed around one goal: your progress, at your pace.
+        </p>
       </div>
 
       <div class="approach-grid">
@@ -312,55 +495,64 @@
         <div class="approach-card approach-card--accent fade-up anim-delay-1">
           <div class="approach-card-icon">&#x1F5A5;&#xFE0F;</div>
           <h3>Private lessons via Google Meet</h3>
-          <p>One-on-one video sessions in a virtual classroom. No commuting, no classrooms, just you and your dedicated tutor.</p>
+          <p>One-on-one video sessions in a virtual classroom. No commuting, no classrooms, just you and your dedicated
+            tutor.</p>
         </div>
 
         <div class="approach-card fade-up anim-delay-2">
           <div class="approach-card-icon">&#x23F1;&#xFE0F;</div>
           <h3>55 minutes per lesson</h3>
-          <p>Each lesson is carefully structured for maximum focus. Long enough to make real progress, concise enough to stay energised.</p>
+          <p>Each lesson is carefully structured for maximum focus. Long enough to make real progress, concise enough to
+            stay energised.</p>
         </div>
 
         <div class="approach-card fade-up anim-delay-3">
           <div class="approach-card-icon">&#x1F4C5;</div>
           <h3>Once or twice per week</h3>
-          <p>Choose a learning rhythm that fits your life. Weekly for steady progress, twice weekly for faster advancement.</p>
+          <p>Choose a learning rhythm that fits your life. Weekly for steady progress, twice weekly for faster
+            advancement.</p>
         </div>
 
         <div class="approach-card approach-card--accent fade-up anim-delay-1">
           <div class="approach-card-icon">&#x1F550;</div>
           <h3>Flexible scheduling</h3>
-          <p>Available any day between 5:00 and 24:00 CET. Our global team spans time zones so there is always a slot that works for you.</p>
+          <p>Available any day between 5:00 and 24:00 CET. Our global team spans time zones so there is always a slot
+            that works for you.</p>
         </div>
 
         <div class="approach-card approach-card--accent fade-up anim-delay-2">
           <div class="approach-card-icon">&#x1F464;</div>
           <h3>One tutor, every time</h3>
-          <p>You work with the same dedicated tutor session after session. They know your progress, your goals, and your learning style.</p>
+          <p>You work with the same dedicated tutor session after session. They know your progress, your goals, and your
+            learning style.</p>
         </div>
 
         <div class="approach-card fade-up anim-delay-3">
           <div class="approach-card-icon">&#x1F4DA;</div>
           <h3>Solid curriculum</h3>
-          <p>Four e-books developed by the University of Groningen for intermediate and highly educated professionals. Covers A1 through C1.</p>
+          <p>Four e-books developed by the University of Groningen for intermediate and highly educated professionals.
+            Covers A1 through C1.</p>
         </div>
 
         <div class="approach-card fade-up anim-delay-1">
           <div class="approach-card-icon">&#x1F3AF;</div>
           <h3>Personalised guidance</h3>
-          <p>Your tutor customises every lesson to your level, goals, and schedule. No two students follow exactly the same path.</p>
+          <p>Your tutor customises every lesson to your level, goals, and schedule. No two students follow exactly the
+            same path.</p>
         </div>
 
         <div class="approach-card fade-up anim-delay-2">
           <div class="approach-card-icon">&#x1F4CA;</div>
           <h3>Periodic testing</h3>
-          <p>Regular assessments track your progress, keep you on target, and give you clear milestones to celebrate along the way.</p>
+          <p>Regular assessments track your progress, keep you on target, and give you clear milestones to celebrate
+            along the way.</p>
         </div>
 
         <div class="approach-card approach-card--accent fade-up anim-delay-3">
           <div class="approach-card-icon">&#x1F491;</div>
           <h3>Partners join for free</h3>
-          <p>Registered partners can join lessons without additional cost, making it easy and affordable for couples to learn together.</p>
+          <p>Registered partners can join lessons without additional cost, making it easy and affordable for couples to
+            learn together.</p>
         </div>
 
       </div>
@@ -370,7 +562,8 @@
   <!-- ========== LEVELS ========== -->
   <section class="section section--alt" id="levels">
     <!-- two filled tulips, bottom-right -->
-    <svg class="section-tulip-deco st-courses" aria-hidden="true" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="section-tulip-deco st-courses" aria-hidden="true" viewBox="0 0 110 200"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M30,200 L30,112" fill="none" stroke="rgba(26,122,191,0.14)" stroke-width="2" stroke-linecap="round" />
       <path d="M30,156 C14,144 3,129 8,115 C16,119 27,135 30,156Z" fill="rgba(26,122,191,0.09)" />
       <path d="M30,141 C46,129 57,114 52,100 C44,104 33,119 30,141Z" fill="rgba(26,122,191,0.09)" />
@@ -385,7 +578,8 @@
       <path d="M80,100 C104,91 111,65 100,38 C93,57 86,80 80,100Z" fill="rgba(26,122,191,0.10)" />
     </svg>
     <!-- windmill, top-left -->
-    <svg class="section-tulip-deco st-windmill-courses" aria-hidden="true" viewBox="0 0 150 270" style="width:110px;" xmlns="http://www.w3.org/2000/svg">
+    <svg class="section-tulip-deco st-windmill-courses" aria-hidden="true" viewBox="0 0 150 270" style="width:110px;"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M44,220 L76,220 L65,78 L55,78 Z" fill="rgba(26,122,191,0.09)" />
       <path d="M57,66 L22,18 L30,12 L62,62 Z" fill="rgba(26,122,191,0.10)" />
       <path d="M63,78 L98,126 L90,132 L58,82 Z" fill="rgba(26,122,191,0.10)" />
@@ -401,7 +595,8 @@
       <div class="section-header fade-up">
         <p class="section-eyebrow">Dutch Language Levels</p>
         <h2 class="section-title">Find Your <em>Level</em></h2>
-        <p class="section-sub">We teach all CEFR levels in private sessions. Wherever you start, we will take you further.</p>
+        <p class="section-sub">We teach all CEFR levels in private sessions. Wherever you start, we will take you
+          further.</p>
       </div>
 
       <div class="levels-grid">
@@ -437,7 +632,8 @@
           <div class="level-badge">Most popular</div>
           <div class="level-range">A2 &#x2192; B2</div>
           <h3>Building Real Fluency</h3>
-          <p>The core of our programme. Develop the grammar, vocabulary, and cultural confidence you need for work and life in the Netherlands.</p>
+          <p>The core of our programme. Develop the grammar, vocabulary, and cultural confidence you need for work and
+            life in the Netherlands.</p>
           <ul>
             <li>A2 to B1 , conversational confidence</li>
             <li>B1 to B2 , professional Dutch</li>
@@ -495,7 +691,8 @@
       <path d="M108,52 L80,88" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="2" />
       <path d="M108,52 L124,88" fill="none" stroke="rgba(26,122,191,0.12)" stroke-width="2" />
       <path d="M76,54 L74,38" fill="none" stroke="rgba(26,122,191,0.12)" stroke-width="2" />
-      <path d="M64,36 C70,31 80,31 84,36" fill="none" stroke="rgba(26,122,191,0.15)" stroke-width="3" stroke-linecap="round" />
+      <path d="M64,36 C70,31 80,31 84,36" fill="none" stroke="rgba(26,122,191,0.15)" stroke-width="3"
+        stroke-linecap="round" />
       <path d="M108,52 L110,35" fill="none" stroke="rgba(26,122,191,0.12)" stroke-width="2" />
       <path d="M103,34 L117,36" fill="none" stroke="rgba(26,122,191,0.15)" stroke-width="2.5" stroke-linecap="round" />
       <circle cx="80" cy="88" r="4" fill="rgba(26,122,191,0.09)" stroke="rgba(26,122,191,0.12)" stroke-width="1.5" />
@@ -507,27 +704,42 @@
 
       <!-- Left: stats visual box -->
       <div class="about-image-wrap slide-in-left">
-        <div style="border-radius:var(--radius-xl);overflow:hidden;position:relative;background:linear-gradient(135deg,#0d4a7a 0%,#1a7abf 60%,#2596d4 100%);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:44px 32px;width:100%;">
+        <div
+          style="border-radius:var(--radius-xl);overflow:hidden;position:relative;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:44px 32px;width:100%;">
+          <!-- Blurred background image -->
+          <div style="position:absolute;inset:0;background:url('images/exam.jpg') center/cover no-repeat;filter:blur(6px) brightness(0.45);transform:scale(1.08);z-index:0;"></div>
+          <!-- Blue tint overlay -->
+          <div style="position:absolute;inset:0;background:rgba(10,50,100,0.45);z-index:1;"></div>
+          <!-- Content above blur -->
+          <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:24px;width:100%;">
           <!-- Big stat -->
           <div style="text-align:center;">
-            <div style="font-family:var(--font-heading);font-size:4.8rem;font-weight:800;color:#fff;line-height:1;text-shadow:0 2px 20px rgba(0,0,0,0.2);">99.7%</div>
-            <div style="color:rgba(255,255,255,0.8);font-size:0.95rem;font-weight:600;margin-top:8px;">NT2 pass rate</div>
+            <div
+              style="font-family:var(--font-heading);font-size:4.8rem;font-weight:800;color:#fff;line-height:1;text-shadow:0 2px 20px rgba(0,0,0,0.2);">
+              99.7%</div>
+            <div style="color:rgba(255,255,255,0.8);font-size:0.95rem;font-weight:600;margin-top:8px;">NT2 pass rate
+            </div>
           </div>
           <div style="width:50px;height:1px;background:rgba(255,255,255,0.25);"></div>
           <!-- Mini stats grid -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;">
-            <div style="background:rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.12);">
-              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:#a8d8f5;line-height:1;">100+</div>
+            <div
+              style="background:rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.12);">
+              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:#a8d8f5;line-height:1;">
+                100+</div>
               <div style="color:rgba(255,255,255,0.72);font-size:0.78rem;margin-top:6px;">Students<br>prepared</div>
             </div>
-            <div style="background:rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.12);">
-              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:#a8d8f5;line-height:1;">4</div>
+            <div
+              style="background:rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.12);">
+              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:#a8d8f5;line-height:1;">4
+              </div>
               <div style="color:rgba(255,255,255,0.72);font-size:0.78rem;margin-top:6px;">Exam skills<br>covered</div>
             </div>
           </div>
+          </div><!-- end content above blur -->
           <!-- Tulip watermark -->
           <svg aria-hidden="true" viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg"
-            style="position:absolute;bottom:0;right:10px;width:90px;opacity:0.10;pointer-events:none;">
+            style="position:absolute;bottom:0;right:10px;width:90px;opacity:0.10;pointer-events:none;z-index:3;">
             <path d="M40,200 L40,110" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" />
             <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" fill="#fff" />
             <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" fill="#fff" />
@@ -542,12 +754,16 @@
       <div class="about-content slide-in-right">
         <p class="section-eyebrow">NT2 Exam Preparation</p>
         <h2 class="section-title">Civic Integration <em>Exams</em></h2>
-        <p>We offer a unique and highly successful preparation programme for all civic integration exams, including the <strong>Staatsexamen NT2</strong> required for permanent residency and Dutch citizenship.</p>
-        <p>Our tailored approach addresses all four language skills, giving you the confidence and the competence to pass first time.</p>
+        <p>We offer a unique and highly successful preparation programme for all civic integration exams, including the
+          <strong>Staatsexamen NT2</strong> required for permanent residency and Dutch citizenship.
+        </p>
+        <p>Our tailored approach addresses all four language skills, giving you the confidence and the competence to
+          pass first time.</p>
         <ul class="about-features">
           <li><span class="feature-icon">&#x2713;</span> Preparation for all civic integration exam types</li>
           <li><span class="feature-icon">&#x2713;</span> Outstanding 99.7% pass rate across 100+ students</li>
-          <li><span class="feature-icon">&#x2713;</span> All four skills: reading, writing, listening &amp; speaking</li>
+          <li><span class="feature-icon">&#x2713;</span> All four skills: reading, writing, listening &amp; speaking
+          </li>
           <li><span class="feature-icon">&#x2713;</span> Mock exams and targeted practice materials</li>
           <li><span class="feature-icon">&#x2713;</span> Personalised exam strategy per student</li>
         </ul>
@@ -597,7 +813,7 @@
         <!-- Certificate visual (left) -->
         <div class="cert-visual slide-in-left">
           <div class="cert-card">
-            <div class="cert-seal">&#x1F337;</div>
+            <div class="cert-seal"></div>
             <p class="cert-eyebrow">Panoramic Learning</p>
             <h3 class="cert-title">Certificate of Achievement</h3>
             <hr class="cert-divider" />
@@ -607,7 +823,6 @@
             <span class="cert-level-badge">B1 &ndash; Intermediate</span>
             <div class="cert-footer-line">
               <img src="images/full-logo.png" alt="Panoramic Learning" class="cert-logo-img" />
-              <span class="cert-year">2026</span>
             </div>
           </div>
         </div>
@@ -616,8 +831,11 @@
         <div class="about-content slide-in-right">
           <p class="section-eyebrow">Your Achievement</p>
           <h2 class="section-title">Earn Your <em>Certificate</em></h2>
-          <p>After successfully completing each language level, you receive an official <strong>Panoramic Learning Certificate</strong>, a tangible recognition of the work you have put in and the milestone you have reached.</p>
-          <p>Whether you are building a CV, applying for residency, or simply proud of your progress, the certificate is yours to keep and share.</p>
+          <p>After successfully completing each language level, you receive an official <strong>Panoramic Learning
+              Certificate</strong>, a tangible recognition of the work you have put in and the milestone you have
+            reached.</p>
+          <p>Whether you are building a CV, applying for residency, or simply proud of your progress, the certificate is
+            yours to keep and share.</p>
           <ul class="about-features">
             <li><span class="feature-icon">&#x2713;</span> Awarded upon successful completion of each level</li>
             <li><span class="feature-icon">&#x2713;</span> Covers all CEFR levels: A1 through C1</li>
@@ -668,8 +886,10 @@
       <p class="partners-label">Trusted partner of</p>
       <div class="partners-logos">
         <span class="partner-logo"><img src="images/home-made.jpg" alt="Home.Made logo" style="height:68px;" /></span>
-        <span class="partner-logo"><img src="images/expat-directory.png" alt="Expat Directory logo" style="height:68px;" /></span>
-        <span class="partner-logo"><img src="images/panoramic-advice.png" alt="Panoramic Advice logo" style="height:68px;" /></span>
+        <span class="partner-logo"><img src="images/expat-directory.png" alt="Expat Directory logo"
+            style="height:68px;" /></span>
+        <span class="partner-logo"><img src="images/panoramic-advice.png" alt="Panoramic Advice logo"
+            style="height:68px;" /></span>
         <span class="partner-logo"><img src="images/situ.jpg" alt="Situ logo" style="height:68px;" /></span>
       </div>
     </div>
@@ -678,7 +898,8 @@
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     <!-- white silhouette tulips -->
-    <svg class="section-tulip-deco st-footer" aria-hidden="true" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="section-tulip-deco st-footer" aria-hidden="true" viewBox="0 0 110 200"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M30,200 L30,112" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round" />
       <path d="M30,156 C14,144 3,129 8,115 C16,119 27,135 30,156Z" fill="rgba(255,255,255,0.07)" />
       <path d="M30,141 C46,129 57,114 52,100 C44,104 33,119 30,141Z" fill="rgba(255,255,255,0.07)" />
@@ -692,7 +913,8 @@
       <path d="M80,100 C76,73 75,46 80,20 C85,46 84,73 80,100Z" fill="rgba(255,255,255,0.09)" />
       <path d="M80,100 C104,91 111,65 100,38 C93,57 86,80 80,100Z" fill="rgba(255,255,255,0.08)" />
     </svg>
-    <svg class="section-tulip-deco st-footer-2" aria-hidden="true" viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="section-tulip-deco st-footer-2" aria-hidden="true" viewBox="0 0 80 200"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M40,200 L40,110" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round" />
       <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" fill="rgba(255,255,255,0.07)" />
       <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" fill="rgba(255,255,255,0.07)" />
@@ -706,7 +928,8 @@
           <img src="images/full-logo.png" alt="Panoramic Learning" class="logo-img logo-img--footer" />
         </a>
         <p class="footer-tagline">Learn Dutch with us</p>
-        <p class="footer-quote">&ldquo;De grenzen van mijn taal zijn<br>de grenzen van mijn wereld.&rdquo;<br><em>, Ludwig Wittgenstein</em></p>
+        <p class="footer-quote">&ldquo;De grenzen van mijn taal zijn<br>de grenzen van mijn wereld.&rdquo;<br><em>,
+            Ludwig Wittgenstein</em></p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
@@ -721,11 +944,20 @@
         <h4>Contact</h4>
         <a href="mailto:judith@panoramic-learning.com">judith@panoramic-learning.com</a>
         <div class="social-btns social-btns--footer">
-          <a href="https://www.facebook.com/panoramiclearning" target="_blank" rel="noopener" class="social-btn social-btn--fb" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <a href="https://www.facebook.com/panoramiclearning" target="_blank" rel="noopener"
+            class="social-btn social-btn--fb" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
           </a>
-          <a href="https://www.instagram.com/panoramic_learning" target="_blank" rel="noopener" class="social-btn social-btn--ig" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <a href="https://www.instagram.com/panoramic_learning" target="_blank" rel="noopener"
+            class="social-btn social-btn--ig" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
           </a>
         </div>
       </div>
@@ -744,4 +976,5 @@
   <script src="script.js"></script>
   <script src="scroll-animate.js"></script>
 </body>
+
 </html>
