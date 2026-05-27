@@ -227,6 +227,37 @@
   border: 2.5px solid var(--clr-accent) !important;
 }
 
+/* Business field background for hero card */
+.hero-card--main.business-bg {
+  background-image: url('images/business-team.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border: 2.5px solid var(--clr-accent) !important;
+}
+
+.hero-card--main.business-bg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  transform: translate(-50%, -50%) scale(1.25);
+  background-image: inherit;
+  background: inherit;
+  filter: blur(3px) brightness(0.5);
+  z-index: 1;
+  pointer-events: none;
+  border: none;
+}
+
+.hero-card--main.business-bg>* {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-card--main.tulip-bg::before {
   content: '';
   position: absolute;
