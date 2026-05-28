@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn English - Panoramic Learning</title>
+    <meta name="description"
+        content="Private English lessons via Google Meet for intermediate and highly educated learners. Build confidence, fluency, and real communication skills with native English-speaking tutors." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="flag-icons.min.css">
+
+    <style>
+        /* ===== LEARN ENGLISH - PAGE-SPECIFIC STYLES ===== */
+        .hero.page-hero {
+            min-height: 72vh;
+        }
+
+        .main-menu a.nav-active {
+            color: var(--clr-accent) !important;
+            font-weight: 600;
+        }
+
+        /* ---------- HERO CARD ---------- */
+        .hero-card--main.en-bg {
+            background: linear-gradient(145deg, #1a3a5c 0%, #0d5c8a 55%, #1a7abf 100%);
+            border: 3px solid rgba(255, 255, 255, .2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            text-align: center;
+            padding: 40px 32px;
+        }
+
+        /* ---------- QUESTIONS SECTION ---------- */
+        .questions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .question-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: #fff;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .question-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .question-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .question-item p {
+            font-size: 0.92rem;
+            color: var(--clr-dark);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .help-banner {
+            margin-top: 48px;
+            background: linear-gradient(135deg, rgba(26, 122, 191, 0.08), rgba(26, 122, 191, 0.04));
+            border: 1.5px solid rgba(26, 122, 191, 0.22);
+            border-radius: var(--radius-xl);
+            padding: 36px 44px;
+            text-align: center;
+        }
+
+        .help-banner h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--clr-dark);
+            margin: 0 0 10px;
+        }
+
+        .help-banner p {
+            font-size: 1rem;
+            color: var(--clr-mid);
+            margin: 0 0 20px;
+        }
+
+        /* ---------- FEATURE CARDS ---------- */
+        .en-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .en-feature-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--clr-border);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .en-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .en-feature-card--accent {
+            border-color: rgba(26, 122, 191, 0.28);
+            background: linear-gradient(145deg, rgba(26, 122, 191, 0.04), rgba(26, 122, 191, 0.09));
+        }
+
+        .en-feature-card-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .en-feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            color: var(--clr-dark);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .en-feature-card p {
+            font-size: 0.9rem;
+            color: var(--clr-mid);
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        /* 5th card centred in 3-col grid */
+        .en-feature-card:last-child:nth-child(3n+2) {
+            grid-column: 2 / 4;
+            justify-self: center;
+        }
+
+        /* ---------- PURPOSE SECTION ---------- */
+        .purpose-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 48px;
+            align-items: start;
+        }
+
+        .purpose-card {
+            background: #fff;
+            border-radius: var(--radius-xl);
+            padding: 40px 36px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--clr-border);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .purpose-card-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+
+        .purpose-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            color: var(--clr-dark);
+            margin: 0 0 14px;
+        }
+
+        .purpose-card p {
+            font-size: 0.92rem;
+            color: var(--clr-mid);
+            line-height: 1.72;
+            margin: 0 0 12px;
+        }
+
+        .purpose-card p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 960px) {
+            .questions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .en-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .en-feature-card:last-child:nth-child(3n+2) {
+                grid-column: auto;
+                max-width: none;
+            }
+
+            .purpose-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .en-features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero.page-hero {
+                min-height: 60vh;
+            }
+
+            .help-banner {
+                padding: 28px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-highlight logo-highlight--full">
+                    <img src="images/full-logo.png" alt="Panoramic Learning" class="logo-img logo-img--full" />
+                </span>
+                <span class="logo-highlight logo-highlight--tulip">
+                    <img src="images/logo.png" alt="Panoramic Learning Tulip Logo" class="logo-img logo-img--tulip" />
+                </span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul class="main-menu">
+                    <li><a href="approach.html">Our Approach</a></li>
+                    <li><a href="companies.html">For Companies</a></li>
+                    <li><a href="south-africans.html">For South Africans</a></li>
+                    <li><a href="english.html" class="nav-active">Learn English</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="hero page-hero" id="english-top">
+        <div class="hero-bg"></div>
+        <div class="container hero-inner">
+
+            <div class="hero-content slide-in-left">
+                <p class="hero-eyebrow">Private English Lessons</p>
+                <h1 class="hero-title">Learn English <em style="font-style:italic;color:#a8d8f5;">with us!</em></h1>
+                <p class="hero-sub">Private English lessons via Google Meet for intermediate and highly educated
+                    learners. Build
+                    real confidence, fluency, and communication skills with native English-speaking tutors.</p>
+                <div class="hero-actions fade-up anim-delay-1">
+                    <a href="index.html#booking" class="btn btn-primary">Book Your First Lesson</a>
+                    <a href="#recognise" class="btn btn-outline">Does this sound like you?</a>
+                </div>
+                <div class="hero-stats fade-up anim-delay-2">
+                    <div class="stat"><strong>55</strong><span>Min per lesson</span></div>
+                    <div class="stat"><strong>Native</strong><span>English tutors</span></div>
+                    <div class="stat"><strong>ESOL</strong><span>Specialist approach</span></div>
+                </div>
+            </div>
+
+            <div class="hero-visual slide-in-right">
+                <div class="hero-card hero-card--main en-bg">
+                    <div style="font-size:3.8rem;line-height:1;">&#x1F30D;</div>
+                    <p
+                        style="font-family:var(--font-heading);font-size:1.35rem;font-style:italic;color:#fff;margin:0;line-height:1.4;">
+                        &ldquo;The limits of my language are the limits of my world.&rdquo;</p>
+                    <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;margin:0;">&mdash; Ludwig Wittgenstein</p>
+                </div>
+                <div class="hero-card hero-card--float hero-card--float-1">
+                    <span class="badge-dot badge-dot--green"></span>
+                    <span>Native English tutors</span>
+                </div>
+                <div class="hero-card hero-card--float hero-card--float-2">
+                    <strong>ESOL</strong>
+                    <span>Tailored for you</span>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true"
+            style="position:absolute;left:-180px;bottom:-90px;opacity:0.13;z-index:0;pointer-events:none;">
+            <img src="images/black-logo.png" alt="" style="width:600px;height:auto;display:block;" />
+        </div>
+        <div aria-hidden="true"
+            style="position:absolute;right:-180px;bottom:-90px;opacity:0.13;z-index:0;pointer-events:none;">
+            <img src="images/black-logo.png" alt="" style="width:600px;height:auto;display:block;" />
+        </div>
+
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ========== DOES THIS SOUND LIKE YOU? ========== -->
+    <section class="section" id="recognise">
+        <!-- tulip logo watermarks -->
+        <div aria-hidden="true"
+            style="position:absolute;left:-50px;bottom:-30px;opacity:0.07;z-index:0;pointer-events:none;"><img
+                src="images/logo.png" alt="" style="width:300px;height:auto;display:block;"></div>
+        <div aria-hidden="true"
+            style="position:absolute;right:-50px;top:-20px;opacity:0.06;z-index:0;pointer-events:none;"><img
+                src="images/logo.png" alt="" style="width:260px;height:auto;display:block;filter:hue-rotate(150deg);">
+        </div>
+
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-eyebrow">Does This Sound Like You?</p>
+                <h2 class="section-title">You Are Not <em>Alone</em></h2>
+                <p class="section-sub">Many highly educated professionals feel held back by their English. We hear these
+                    concerns every day.</p>
+            </div>
+
+            <div class="questions-grid">
+                <div class="question-item fade-up anim-delay-1">
+                    <span class="question-icon">&#x1F393;</span>
+                    <p>Did you study English in secondary school but haven&rsquo;t used it regularly since?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-2">
+                    <span class="question-icon">&#x1F62C;</span>
+                    <p>Do you feel nervous speaking English in front of a group &mdash; or even during phone calls?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-1">
+                    <span class="question-icon">&#x1F4AC;</span>
+                    <p>Ready to speak English with confidence, and without hesitation?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-2">
+                    <span class="question-icon">&#x1F6AB;</span>
+                    <p>Tired of worrying about mistakes holding you back?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-1">
+                    <span class="question-icon">&#x1F4C8;</span>
+                    <p>Want to turn everyday conversations into real progress?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-2">
+                    <span class="question-icon">&#x26A1;</span>
+                    <p>Looking for a faster, more effective way to improve your English?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-1">
+                    <span class="question-icon">&#x1F4BC;</span>
+                    <p>Imagine feeling comfortable speaking in any situation &mdash; at work or socially.</p>
+                </div>
+                <div class="question-item fade-up anim-delay-2">
+                    <span class="question-icon">&#x1F3AF;</span>
+                    <p>Ready to learn with guidance that&rsquo;s personal and goal-oriented?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-1">
+                    <span class="question-icon">&#x1F914;</span>
+                    <p>Curious how quickly your confidence can improve with the right approach?</p>
+                </div>
+                <div class="question-item fade-up anim-delay-2">
+                    <span class="question-icon">&#x1F310;</span>
+                    <p>Ready to connect with others effortlessly in an international environment?</p>
+                </div>
+            </div>
+
+            <div class="help-banner fade-up">
+                <h3>Help is on its way!</h3>
+                <p>So why wait? Start building your confidence in English today.</p>
+                <a href="index.html#booking" class="btn btn-primary">Book Your First Lesson</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT THE PROGRAMME ========== -->
+    <section class="section section--alt about" id="about-programme">
+        <!-- tulip logo watermarks -->
+        <div aria-hidden="true"
+            style="position:absolute;right:-50px;bottom:-30px;opacity:0.09;z-index:0;pointer-events:none;"><img
+                src="images/logo.png" alt="" style="width:320px;height:auto;display:block;"></div>
+
+        <div class="container about-grid">
+
+            <!-- Left: visual stat box -->
+            <div class="about-image-wrap slide-in-left">
+                <div
+                    style="border-radius:var(--radius-xl);overflow:hidden;position:relative;background:linear-gradient(135deg,#0d2b3e 0%,#1a4a6e 60%,#1a7abf 100%);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:44px 32px;width:100%;">
+                    <div style="text-align:center;">
+                        <div style="font-size:3.2rem;line-height:1;margin-bottom:12px;">&#x1F1EC;&#x1F1E7;
+                            &#x1F1FA;&#x1F1F8; &#x1F1E6;&#x1F1FA; &#x1F1F3;&#x1F1FF;</div>
+                        <div
+                            style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:#fff;line-height:1.3;text-shadow:0 2px 20px rgba(0,0,0,0.2);">
+                            English spoken<br>worldwide</div>
+                        <div style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:8px;">Native tutors from
+                            multiple
+                            regions</div>
+                    </div>
+                    <div style="width:50px;height:1px;background:rgba(255,255,255,0.25);"></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;">
+                        <div
+                            style="background:rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.12);">
+                            <div
+                                style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:#a8d8f5;line-height:1;">
+                                ESOL
+                            </div>
+                            <div style="color:rgba(255,255,255,0.72);font-size:0.78rem;margin-top:6px;">
+                                Specialist<br>approach</div>
+                        </div>
+                        <div
+                            style="background:rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.12);">
+                            <div
+                                style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:#a8d8f5;line-height:1;">
+                                55<span style="font-size:1rem;">min</span></div>
+                            <div style="color:rgba(255,255,255,0.72);font-size:0.78rem;margin-top:6px;">Per
+                                private<br>lesson</div>
+                        </div>
+                    </div>
+                    <!-- Tulip watermark -->
+                    <svg aria-hidden="true" viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg"
+                        style="position:absolute;bottom:0;right:10px;width:90px;opacity:0.10;pointer-events:none;z-index:3;">
+                        <path d="M40,200 L40,110" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                        <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" fill="#fff" />
+                        <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" fill="#fff" />
+                        <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" fill="#fff" />
+                        <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" fill="#fff" />
+                        <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" fill="#fff" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Right: content -->
+            <div class="about-content slide-in-right">
+                <p class="section-eyebrow">About the Programme</p>
+                <h2 class="section-title">Private English <em>for ESOL Learners</em></h2>
+                <p>Panoramic Learning provides private English lessons through Google Meet for intermediate and highly
+                    educated
+                    learners.</p>
+                <p>We have developed a dynamic English course specifically for <strong>ESOL learners</strong> (English
+                    for
+                    Speakers of Other Languages). Our programme is designed to rebuild your confidence and help you
+                    communicate
+                    effectively in real-life situations. Our tutors are native English speakers and know about the
+                    English spoken
+                    in the different regions in the world.</p>
+                <ul class="about-features">
+                    <li><span class="feature-icon">&#x2713;</span> Private one-on-one lessons via Google Meet</li>
+                    <li><span class="feature-icon">&#x2713;</span> Native English-speaking tutors</li>
+                    <li><span class="feature-icon">&#x2713;</span> Knowledge of English across different regions
+                        worldwide</li>
+                    <li><span class="feature-icon">&#x2713;</span> Designed for intermediate and highly educated
+                        learners</li>
+                    <li><span class="feature-icon">&#x2713;</span> Focus on real-life confidence and communication</li>
+                </ul>
+                <a href="index.html#booking" class="btn btn-primary">Start Your English Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHAT YOU CAN EXPECT ========== -->
+    <section class="section" id="what-to-expect">
+        <!-- tulip logo watermarks -->
+        <div aria-hidden="true"
+            style="position:absolute;left:-50px;bottom:-30px;opacity:0.07;z-index:0;pointer-events:none;"><img
+                src="images/logo.png" alt="" style="width:300px;height:auto;display:block;"></div>
+
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-eyebrow">The Programme</p>
+                <h2 class="section-title">What You Can <em>Expect</em></h2>
+                <p class="section-sub">Every lesson is designed around your goals, your level, and your real-life needs.
+                </p>
+            </div>
+
+            <div class="en-features-grid">
+
+                <div class="en-feature-card en-feature-card--accent fade-up anim-delay-1">
+                    <div class="en-feature-card-icon">&#x1F4D6;</div>
+                    <h3>Grammar Refresh</h3>
+                    <p>If your English grammar feels a bit rusty, we help you rebuild a strong foundation with clear,
+                        practical
+                        explanations you can immediately use in real conversations.</p>
+                </div>
+
+                <div class="en-feature-card fade-up anim-delay-2">
+                    <div class="en-feature-card-icon">&#x1F5E3;&#xFE0F;</div>
+                    <h3>In-Depth Conversations</h3>
+                    <p>Engage in meaningful discussions on a wide range of topics, helping you think and respond
+                        naturally in
+                        English.</p>
+                </div>
+
+                <div class="en-feature-card fade-up anim-delay-3">
+                    <div class="en-feature-card-icon">&#x270F;&#xFE0F;</div>
+                    <h3>Interactive &amp; Engaging Exercises</h3>
+                    <p>Learn by doing &mdash; with activities that make language stick and build fluency step by step.
+                    </p>
+                </div>
+
+                <div class="en-feature-card en-feature-card--accent fade-up anim-delay-1">
+                    <div class="en-feature-card-icon">&#x1F310;</div>
+                    <h3>Focus on Real Communication</h3>
+                    <p>We teach neutral, practical English while also introducing key regional differences, helping you
+                        communicate confidently in any international setting.</p>
+                </div>
+
+                <div class="en-feature-card fade-up anim-delay-2">
+                    <div class="en-feature-card-icon">&#x1F4AA;</div>
+                    <h3>Building Self-Confidence</h3>
+                    <p>Alongside language skills, we help you develop the confidence to speak up, express yourself
+                        clearly, and
+                        feel comfortable using English in any situation.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== A COURSE WITH PURPOSE ========== -->
+    <section class="section section--alt" id="course-purpose">
+        <!-- tulip logo watermarks -->
+        <div aria-hidden="true"
+            style="position:absolute;right:-50px;top:-20px;opacity:0.07;z-index:0;pointer-events:none;"><img
+                src="images/logo.png" alt="" style="width:250px;height:auto;display:block;filter:hue-rotate(150deg);">
+        </div>
+
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-eyebrow">More Than Just Lessons</p>
+                <h2 class="section-title">A Course with <em>Purpose</em></h2>
+                <p class="section-sub">Our programme is built to deliver results you can use immediately &mdash; in the
+                    office,
+                    socially, and everywhere in between.</p>
+            </div>
+
+            <div class="purpose-wrap">
+
+                <div class="purpose-card slide-in-left">
+                    <div class="purpose-card-icon">&#x1F3A4;</div>
+                    <h3>Your Personalised Presentation</h3>
+                    <p>The final stage of the course culminates in a personalised presentation, tailored to your
+                        professional
+                        background and career goals.</p>
+                    <p>This allows you to apply everything you have learned in a practical, relevant, and empowering
+                        way.</p>
+                </div>
+
+                <div class="purpose-card slide-in-right">
+                    <div class="purpose-card-icon">&#x1F3C6;</div>
+                    <h3>Our Goal</h3>
+                    <p>To help you move from hesitation to confidence &mdash; so you can speak English clearly,
+                        comfortably, and
+                        with impact in both your professional and personal life.</p>
+                    <p>Why choose Panoramic Learning? Because confidence in English starts with the right approach
+                        &mdash; and
+                        the right partner.</p>
+                    <a href="index.html#booking" class="btn btn-primary" style="margin-top:20px;">Book Your First
+                        Lesson</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA BAND ========== -->
+    <section class="cta-band">
+        <!-- tulip logo watermarks -->
+        <div aria-hidden="true"
+            style="position:absolute;left:-60px;bottom:-40px;opacity:0.15;z-index:0;pointer-events:none;"><img
+                src="images/black-logo.png" alt="" style="width:340px;height:auto;display:block;filter:invert(1);">
+        </div>
+        <div aria-hidden="true"
+            style="position:absolute;right:-60px;top:-40px;opacity:0.12;z-index:0;pointer-events:none;"><img
+                src="images/black-logo.png" alt="" style="width:280px;height:auto;display:block;filter:invert(1);">
+        </div>
+        <div class="container cta-band-inner">
+            <h2>Ready to speak English with confidence?</h2>
+            <p>Join learners already communicating fluently and fearlessly in English.</p>
+            <a href="index.html#booking" class="btn btn-white">Book Your First Lesson</a>
+        </div>
+    </section>
+
+    <!-- ========== PARTNERS STRIP ========== -->
+    <section class="partners">
+        <div class="container">
+            <p class="partners-label">Trusted partner of</p>
+            <div class="partners-logos">
+                <span class="partner-logo"><img src="images/home-made.jpg" alt="Home.Made logo"
+                        style="height:68px;" /></span>
+                <span class="partner-logo"><img src="images/expat-directory.png" alt="Expat Directory logo"
+                        style="height:68px;" /></span>
+                <span class="partner-logo"><img src="images/panoramic-advice.png" alt="Panoramic Advice logo"
+                        style="height:68px;" /></span>
+                <span class="partner-logo"><img src="images/situ.jpg" alt="Situ logo" style="height:68px;" /></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <!-- tulip logo watermarks -->
+        <div aria-hidden="true"
+            style="position:absolute;right:-60px;bottom:-40px;opacity:0.15;z-index:0;pointer-events:none;"><img
+                src="images/black-logo.png" alt="" style="width:340px;height:auto;display:block;filter:invert(1);">
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo logo--footer">
+                    <img src="images/full-logo.png" alt="Panoramic Learning" class="logo-img logo-img--footer" />
+                </a>
+                <p class="footer-tagline">Learn Dutch with us</p>
+                <p class="footer-quote">&ldquo;De grenzen van mijn taal zijn<br>de grenzen van mijn
+                    wereld.&rdquo;<br><em>,
+                        Ludwig Wittgenstein</em></p>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <a href="index.html">Home</a>
+                <a href="approach.html">Our Approach</a>
+                <a href="companies.html">For Companies</a>
+                <a href="south-africans.html">For South Africans</a>
+                <a href="english.html">Learn English</a>
+
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:judith@panoramic-learning.com" style="white-space:nowrap;">judith@panoramic-learning.com</a>
+                <a href="tel:+31612345678" style="white-space:nowrap;">+31 6 12345678</a>
+                <div class="social-btns social-btns--footer">
+                    <a href="https://www.facebook.com/panoramiclearning" target="_blank" rel="noopener"
+                        class="social-btn social-btn--fb" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/panoramic_learning" target="_blank" rel="noopener"
+                        class="social-btn social-btn--ig" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Panoramic Learning&trade; , All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="scroll-animate.js"></script>
+</body>
+
+</html>

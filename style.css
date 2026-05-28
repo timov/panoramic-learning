@@ -1,4 +1,13 @@
-﻿@media (max-width: 480px) {
+﻿@media (max-width: 800px) {
+  /* Hide right tulip hero background on all pages for mobile/tablet */
+  .hero-logo-art-right,
+  [style*="right:-50px"][aria-hidden="true"],
+  [style*="right:-180px"][aria-hidden="true"],
+  [style*="right:-60px"][aria-hidden="true"] {
+    display: none !important;
+  }
+}
+@media (max-width: 480px) {
   .social-btns--footer {
     display: flex;
     justify-content: center;
@@ -47,28 +56,27 @@
   padding: 2px 6px;
   margin: 0;
   border-radius: 10px;
-  background: linear-gradient(90deg, #fff 40%, #ffe6e6 80%, #1a7abf22 100%);
-  box-shadow: 0 1px 4px 0 rgba(204, 32, 32, 0.08), 0 1px 2px 0 rgba(26, 122, 191, 0.05);
-  transition: box-shadow .2s, transform .2s, background .2s;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow .2s, transform .2s;
   position: relative;
   z-index: 10;
 }
 
 .logo-highlight:hover {
-  box-shadow: 0 8px 40px 0 rgba(204, 32, 32, 0.22), 0 6px 24px 0 rgba(26, 122, 191, 0.18);
-  background: linear-gradient(90deg, #ffe6e6 0%, #fff 60%, #1a7abf22 100%);
+  box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.12), 0 6px 24px 0 rgba(0, 0, 0, 0.08);
   transform: scale(1.06) rotate(-1deg);
 }
 
 .logo-highlight .logo-img--full,
 .logo-highlight .logo-img--tulip {
-  filter: drop-shadow(0 2px 8px rgba(204, 32, 32, 0.10));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.10));
   transition: filter .2s;
 }
 
 .logo-highlight:hover .logo-img--full,
 .logo-highlight:hover .logo-img--tulip {
-  filter: drop-shadow(0 6px 20px rgba(204, 32, 32, 0.18));
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.15));
 }
 
 /* Hide tulip-only logo by default, show full logo */
@@ -359,6 +367,8 @@ textarea {
 
 .section {
   padding-block: 56px;
+  position: relative;
+  overflow: hidden;
 }
 
 .section.how-it-works {
@@ -1977,7 +1987,7 @@ textarea {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
   padding-block: 64px;
 }
@@ -2564,6 +2574,47 @@ textarea {
   /* --- FAQ --- */
   .faq-question {
     font-size: .9rem;
+  }
+
+  /* --- Typography: break long words on very narrow screens --- */
+  .hero-title,
+  .section-title,
+  .hero-card-quote {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* --- Prevent fixed-width images from overflowing --- */
+  .cert-card {
+    max-width: 100%;
+  }
+
+  /* --- Booking form: smaller padding on phones --- */
+  .contact-info-box {
+    padding: 14px 16px;
+  }
+
+  /* --- Partners: reduce image height on phones --- */
+  .partners-logos img {
+    height: 48px !important;
+  }
+
+  /* --- About badge: prevent overflow past container edge --- */
+  .about-badge-corner {
+    right: 0;
+    bottom: -10px;
+    margin-right: 6px;
+  }
+
+  /* --- Hero card: never overflow viewport on phones --- */
+  .hero-card--main {
+    max-width: 100%;
+    padding: 24px 18px;
+  }
+
+  /* --- Section eyebrow: allow wrapping on phones --- */
+  .hero-eyebrow {
+    white-space: normal;
   }
 }
 

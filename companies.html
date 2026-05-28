@@ -131,10 +131,34 @@
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .arrangements-grid { grid-template-columns: 1fr; }
       .sa-lang-split { grid-template-columns: 1fr; }
+      /* Reset grid-column tricks that don't work in single-column layout */
+      .arrangement-item:last-child:nth-child(2n+1) {
+        grid-column: auto;
+        max-width: none;
+        justify-self: auto;
+      }
+      .feature-card:last-child:nth-child(3n+1) { grid-column: auto; }
     }
     @media (max-width: 600px) {
       .features-grid { grid-template-columns: 1fr; }
+      .feature-card:last-child:nth-child(3n+1) { grid-column: auto; }
       .hero.page-hero { min-height: 60vh; }
+      /* Reduce arrangement padding on phones */
+      .arrangement-item { padding: 18px 16px; gap: 12px; }
+    }
+    @media (max-width: 700px) {
+      /* Key insight banner: stack and center cards on mobile */
+      .key-insight-banner-cards {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+      }
+      .key-insight-banner-cards > div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+        max-width: 320px;
+      }
     }
   </style>
 </head>
@@ -156,9 +180,9 @@
         <ul class="main-menu">
           <li><a href="approach.html">Our Approach</a></li>
           <li><a href="companies.html" class="nav-active">For Companies</a></li>
-          <li><a href="index.html#testimonials">Reviews</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#booking" class="nav-cta">Contact us</a></li>
+          <li><a href="south-africans.html">For South Africans</a></li>
+          <li><a href="english.html">Learn English</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -224,34 +248,9 @@
 
   <!-- ========== PARTNERSHIP INTRO ========== -->
   <section class="section about" id="partnership">
-    <svg class="section-tulip-deco st-about" aria-hidden="true" viewBox="0 0 80 200" fill="none"
-      stroke="rgba(26,122,191,0.16)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      xmlns="http://www.w3.org/2000/svg">
-      <path d="M40,200 L40,110" />
-      <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" />
-      <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" />
-      <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" />
-      <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" />
-      <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" />
-    </svg>
-    <!-- bicycle, bottom-right -->
-    <svg class="section-tulip-deco st-bike-about" aria-hidden="true" viewBox="0 0 200 160" style="width:180px;"
-      xmlns="http://www.w3.org/2000/svg">
-      <circle cx="36" cy="88" r="26" fill="none" stroke="rgba(26,122,191,0.14)" stroke-width="2" />
-      <circle cx="124" cy="88" r="26" fill="none" stroke="rgba(26,122,191,0.14)" stroke-width="2" />
-      <circle cx="36" cy="88" r="3" fill="rgba(26,122,191,0.12)" />
-      <circle cx="124" cy="88" r="3" fill="rgba(26,122,191,0.12)" />
-      <path d="M36,88 L80,88" fill="none" stroke="rgba(26,122,191,0.10)" stroke-width="1.5" />
-      <path d="M80,88 L76,54" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="2" />
-      <path d="M76,54 L108,52" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="2" />
-      <path d="M108,52 L80,88" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="2" />
-      <path d="M108,52 L124,88" fill="none" stroke="rgba(26,122,191,0.12)" stroke-width="2" />
-      <path d="M76,54 L74,38" fill="none" stroke="rgba(26,122,191,0.12)" stroke-width="2" />
-      <path d="M64,36 C70,31 80,31 84,36" fill="none" stroke="rgba(26,122,191,0.15)" stroke-width="3" stroke-linecap="round" />
-      <path d="M108,52 L110,35" fill="none" stroke="rgba(26,122,191,0.12)" stroke-width="2" />
-      <path d="M103,34 L117,36" fill="none" stroke="rgba(26,122,191,0.15)" stroke-width="2.5" stroke-linecap="round" />
-      <circle cx="80" cy="88" r="4" fill="rgba(26,122,191,0.09)" stroke="rgba(26,122,191,0.12)" stroke-width="1.5" />
-    </svg>
+    <!-- tulip logo watermarks -->
+    <div aria-hidden="true" style="position:absolute;left:-50px;bottom:-30px;opacity:0.07;z-index:0;pointer-events:none;"><img src="images/logo.png" alt="" style="width:300px;height:auto;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;right:-50px;top:-20px;opacity:0.06;z-index:0;pointer-events:none;"><img src="images/logo.png" alt="" style="width:260px;height:auto;display:block;filter:hue-rotate(150deg);"></div>
 
     <div class="container about-grid">
 
@@ -304,26 +303,8 @@
 
   <!-- ========== WHAT YOU CAN EXPECT ========== -->
   <section class="section section--alt" id="what-to-expect">
-    <!-- outline tulip, top-right -->
-    <svg class="section-tulip-deco st-courses-2" aria-hidden="true" viewBox="0 0 80 200" fill="none"
-      stroke="rgba(26,122,191,0.14)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      xmlns="http://www.w3.org/2000/svg">
-      <path d="M40,200 L40,110" />
-      <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" />
-      <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" />
-      <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" />
-      <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" />
-      <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" />
-    </svg>
-    <!-- filled tulip, bottom-left -->
-    <svg class="section-tulip-deco st-about-2" aria-hidden="true" viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
-      <path d="M40,200 L40,110" fill="none" stroke="rgba(26,122,191,0.14)" stroke-width="2" stroke-linecap="round" />
-      <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" fill="rgba(26,122,191,0.12)" />
-      <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" fill="rgba(26,122,191,0.10)" />
-    </svg>
+    <!-- tulip logo watermarks -->
+    <div aria-hidden="true" style="position:absolute;right:-50px;bottom:-30px;opacity:0.09;z-index:0;pointer-events:none;"><img src="images/logo.png" alt="" style="width:320px;height:auto;display:block;"></div>
 
     <div class="container">
       <div class="section-header fade-up">
@@ -382,29 +363,9 @@
 
   <!-- ========== PRACTICAL ARRANGEMENTS ========== -->
   <section class="section" id="practical">
-    <!-- windmill, top-left -->
-    <svg class="section-tulip-deco st-windmill-courses" aria-hidden="true" viewBox="0 0 150 270" style="width:110px;" xmlns="http://www.w3.org/2000/svg">
-      <path d="M44,220 L76,220 L65,78 L55,78 Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M57,66 L22,18 L30,12 L62,62 Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M63,78 L98,126 L90,132 L58,82 Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M63,66 L98,18 L90,12 L58,62 Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M57,78 L22,126 L30,132 L62,82 Z" fill="rgba(26,122,191,0.10)" />
-      <circle cx="60" cy="72" r="7" fill="rgba(26,122,191,0.13)" />
-      <path d="M52,220 L52,198 Q60,188 68,198 L68,220 Z" fill="rgba(26,122,191,0.07)" />
-      <rect x="54" y="150" width="12" height="10" rx="3" fill="rgba(26,122,191,0.07)" />
-      <rect x="55" y="115" width="10" height="8" rx="2" fill="rgba(26,122,191,0.07)" />
-    </svg>
-    <!-- outline tulip, top-right -->
-    <svg class="section-tulip-deco st-courses-2" aria-hidden="true" viewBox="0 0 80 200" fill="none"
-      stroke="rgba(26,122,191,0.14)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      xmlns="http://www.w3.org/2000/svg">
-      <path d="M40,200 L40,110" />
-      <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" />
-      <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" />
-      <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" />
-      <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" />
-      <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" />
-    </svg>
+    <!-- tulip logo watermarks -->
+    <div aria-hidden="true" style="position:absolute;right:-50px;bottom:-30px;opacity:0.07;z-index:0;pointer-events:none;"><img src="images/logo.png" alt="" style="width:300px;height:auto;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;left:-50px;top:-20px;opacity:0.06;z-index:0;pointer-events:none;"><img src="images/logo.png" alt="" style="width:260px;height:auto;display:block;filter:hue-rotate(150deg);"></div>
 
     <div class="container">
       <div class="section-header fade-up">
@@ -461,38 +422,7 @@
 
   <!-- ========== ESPECIALLY FOR SOUTH AFRICANS ========== -->
   <section class="section section--alt" id="south-africans">
-    <!-- three mini tulips, bottom-right -->
-    <svg class="section-tulip-deco st-faq" aria-hidden="true" viewBox="0 0 150 180" xmlns="http://www.w3.org/2000/svg">
-      <path d="M25,180 L25,98" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="1.5" stroke-linecap="round" />
-      <path d="M25,136 C13,126 5,114 9,103 C16,107 24,119 25,136Z" fill="rgba(26,122,191,0.08)" />
-      <path d="M25,123 C37,113 45,101 41,90 C34,94 26,106 25,123Z" fill="rgba(26,122,191,0.08)" />
-      <path d="M25,98 C5,90 -1,68 10,46 C16,62 21,81 25,98Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M25,98 C21,74 20,50 25,28 C30,50 29,74 25,98Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M25,98 C45,90 51,68 40,46 C34,62 29,81 25,98Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M75,180 L75,85" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="2" stroke-linecap="round" />
-      <path d="M75,126 C61,116 53,102 57,90 C65,94 73,108 75,126Z" fill="rgba(26,122,191,0.08)" />
-      <path d="M75,112 C89,102 97,88 93,76 C85,80 77,94 75,112Z" fill="rgba(26,122,191,0.08)" />
-      <path d="M75,85 C53,76 47,53 58,30 C64,48 70,68 75,85Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M75,85 C71,60 70,35 75,12 C80,35 79,60 75,85Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M75,85 C97,76 103,53 92,30 C86,48 80,68 75,85Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M125,180 L125,98" fill="none" stroke="rgba(26,122,191,0.13)" stroke-width="1.5" stroke-linecap="round" />
-      <path d="M125,136 C113,126 105,114 109,103 C116,107 124,119 125,136Z" fill="rgba(26,122,191,0.08)" />
-      <path d="M125,123 C137,113 145,101 141,90 C134,94 126,106 125,123Z" fill="rgba(26,122,191,0.08)" />
-      <path d="M125,98 C105,90 99,68 110,46 C116,62 121,81 125,98Z" fill="rgba(26,122,191,0.09)" />
-      <path d="M125,98 C121,74 120,50 125,28 C130,50 129,74 125,98Z" fill="rgba(26,122,191,0.10)" />
-      <path d="M125,98 C145,90 149,68 140,46 C134,62 129,81 125,98Z" fill="rgba(26,122,191,0.09)" />
-    </svg>
-    <!-- outline tulip, top-left -->
-    <svg class="section-tulip-deco st-faq-2" aria-hidden="true" viewBox="0 0 80 200" fill="none"
-      stroke="rgba(26,122,191,0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      xmlns="http://www.w3.org/2000/svg">
-      <path d="M40,200 L40,110" />
-      <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" />
-      <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" />
-      <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" />
-      <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" />
-      <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" />
-    </svg>
+    <!-- tulip logo watermarks -->
 
     <div class="container">
       <div class="section-header fade-up">
@@ -521,18 +451,18 @@
       </div>
 
       <!-- Key insight banner -->
-      <div style="margin-top:32px;background:linear-gradient(135deg,#0d4a7a 0%,#1a7abf 60%,#2596d4 100%);border-radius:var(--radius-xl);padding:40px 44px;color:#fff;display:flex;align-items:center;gap:40px;flex-wrap:wrap;" class="fade-up">
+      <div style="margin-top:32px;background:linear-gradient(135deg,#0d4a7a 0%,#1a7abf 60%,#2596d4 100%);border-radius:var(--radius-xl);padding:40px 44px;color:#fff;display:flex;align-items:center;gap:40px;flex-wrap:wrap;" class="fade-up key-insight-banner">
         <div style="flex:1;min-width:240px;">
           <p style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 8px;">Key insight for Afrikaans speakers</p>
           <h3 style="font-family:var(--font-heading);font-size:1.5rem;color:#fff;margin:0 0 12px;">Reading &amp; Listening vs. Writing &amp; Speaking</h3>
           <p style="color:rgba(255,255,255,0.8);margin:0;font-size:0.93rem;line-height:1.65;">For Afrikaans speakers, reading and listening in Dutch are often surprisingly accessible &mdash; but writing and speaking require dedicated, targeted practice. Our tutors adjust the curriculum accordingly, from day one.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;">
-          <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:16px 22px;border:1px solid rgba(255,255,255,0.15);text-align:center;">
+        <div class="key-insight-banner-cards" style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;align-items:center;">
+          <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:16px 22px;border:1px solid rgba(255,255,255,0.15);text-align:center;max-width:320px;">
             <div style="font-size:1.5rem;margin-bottom:6px;">&#x1F4D6; &#x1F3A7;</div>
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:600;">Reading &amp; Listening<br><span style="font-weight:400;opacity:0.8;">Often easier</span></div>
           </div>
-          <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:16px 22px;border:1px solid rgba(255,255,255,0.15);text-align:center;">
+          <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:16px 22px;border:1px solid rgba(255,255,255,0.15);text-align:center;max-width:320px;">
             <div style="font-size:1.5rem;margin-bottom:6px;">&#x270D;&#xFE0F; &#x1F5E3;&#xFE0F;</div>
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:600;">Writing &amp; Speaking<br><span style="font-weight:400;opacity:0.8;">Needs extra focus</span></div>
           </div>
@@ -544,28 +474,9 @@
 
   <!-- ========== CTA BAND ========== -->
   <section class="cta-band">
-    <svg class="section-tulip-deco st-cta-l" aria-hidden="true" viewBox="0 0 90 200" xmlns="http://www.w3.org/2000/svg">
-      <path d="M26,200 L26,120" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round" />
-      <path d="M26,158 C10,146 1,130 6,116 C14,120 23,136 26,158Z" fill="rgba(255,255,255,0.10)" />
-      <path d="M26,142 C42,130 51,114 46,100 C38,104 29,120 26,142Z" fill="rgba(255,255,255,0.10)" />
-      <path d="M26,120 C2,111 -5,86 6,60 C13,78 20,100 26,120Z" fill="rgba(255,255,255,0.11)" />
-      <path d="M26,120 C22,94 21,68 26,42 C31,68 30,94 26,120Z" fill="rgba(255,255,255,0.14)" />
-      <path d="M26,120 C50,111 57,86 46,60 C39,78 32,98 26,120Z" fill="rgba(255,255,255,0.11)" />
-      <path d="M66,200 L66,106" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2.5" stroke-linecap="round" />
-      <path d="M66,152 C50,140 39,124 44,110 C52,114 63,130 66,152Z" fill="rgba(255,255,255,0.10)" />
-      <path d="M66,137 C82,125 91,109 86,95 C78,99 69,115 66,137Z" fill="rgba(255,255,255,0.10)" />
-      <path d="M66,106 C42,97 35,72 46,46 C53,64 60,86 66,106Z" fill="rgba(255,255,255,0.11)" />
-      <path d="M66,106 C62,80 61,54 66,28 C71,54 70,80 66,106Z" fill="rgba(255,255,255,0.14)" />
-      <path d="M66,106 C90,97 97,72 86,46 C79,64 72,86 66,106Z" fill="rgba(255,255,255,0.11)" />
-    </svg>
-    <svg class="section-tulip-deco st-cta-r" aria-hidden="true" viewBox="0 0 60 200" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,200 L30,108" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round" />
-      <path d="M30,153 C14,141 3,126 8,112 C16,116 27,132 30,153Z" fill="rgba(255,255,255,0.10)" />
-      <path d="M30,138 C46,126 55,111 50,97 C42,101 33,116 30,138Z" fill="rgba(255,255,255,0.10)" />
-      <path d="M30,108 C6,99 -1,74 10,48 C17,66 24,88 30,108Z" fill="rgba(255,255,255,0.11)" />
-      <path d="M30,108 C26,82 25,56 30,30 C35,56 34,82 30,108Z" fill="rgba(255,255,255,0.14)" />
-      <path d="M30,108 C54,99 61,74 50,48 C43,66 36,88 30,108Z" fill="rgba(255,255,255,0.11)" />
-    </svg>
+    <!-- tulip logo watermarks -->
+    <div aria-hidden="true" style="position:absolute;left:-60px;bottom:-40px;opacity:0.15;z-index:0;pointer-events:none;"><img src="images/black-logo.png" alt="" style="width:340px;height:auto;display:block;filter:invert(1);"></div>
+    <div aria-hidden="true" style="position:absolute;right:-60px;top:-40px;opacity:0.12;z-index:0;pointer-events:none;"><img src="images/black-logo.png" alt="" style="width:280px;height:auto;display:block;filter:invert(1);"></div>
     <div class="container cta-band-inner">
       <h2>Ready to invest in your team&rsquo;s future?</h2>
       <p>Let&rsquo;s design a Dutch language programme tailored to your organisation.</p>
@@ -588,28 +499,8 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
-    <svg class="section-tulip-deco st-footer" aria-hidden="true" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30,200 L30,112" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round" />
-      <path d="M30,156 C14,144 3,129 8,115 C16,119 27,135 30,156Z" fill="rgba(255,255,255,0.07)" />
-      <path d="M30,141 C46,129 57,114 52,100 C44,104 33,119 30,141Z" fill="rgba(255,255,255,0.07)" />
-      <path d="M30,112 C6,103 -1,78 10,52 C17,70 24,92 30,112Z" fill="rgba(255,255,255,0.08)" />
-      <path d="M30,112 C26,86 25,60 30,34 C35,60 34,86 30,112Z" fill="rgba(255,255,255,0.09)" />
-      <path d="M30,112 C54,103 61,78 50,52 C43,70 36,92 30,112Z" fill="rgba(255,255,255,0.08)" />
-      <path d="M80,200 L80,100" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round" />
-      <path d="M80,148 C64,136 53,120 58,106 C66,110 77,126 80,148Z" fill="rgba(255,255,255,0.07)" />
-      <path d="M80,133 C96,121 107,105 102,91 C94,95 83,111 80,133Z" fill="rgba(255,255,255,0.07)" />
-      <path d="M80,100 C56,91 49,65 60,38 C67,57 74,80 80,100Z" fill="rgba(255,255,255,0.08)" />
-      <path d="M80,100 C76,73 75,46 80,20 C85,46 84,73 80,100Z" fill="rgba(255,255,255,0.09)" />
-      <path d="M80,100 C104,91 111,65 100,38 C93,57 86,80 80,100Z" fill="rgba(255,255,255,0.08)" />
-    </svg>
-    <svg class="section-tulip-deco st-footer-2" aria-hidden="true" viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
-      <path d="M40,200 L40,110" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round" />
-      <path d="M40,155 C24,143 13,128 18,114 C26,118 37,134 40,155Z" fill="rgba(255,255,255,0.07)" />
-      <path d="M40,140 C56,128 67,113 62,99 C54,103 43,118 40,140Z" fill="rgba(255,255,255,0.07)" />
-      <path d="M40,110 C16,101 9,76 20,50 C27,68 34,90 40,110Z" fill="rgba(255,255,255,0.08)" />
-      <path d="M40,110 C36,84 35,58 40,32 C45,58 44,84 40,110Z" fill="rgba(255,255,255,0.09)" />
-      <path d="M40,110 C64,101 71,76 60,50 C53,68 46,90 40,110Z" fill="rgba(255,255,255,0.08)" />
-    </svg>
+    <!-- tulip logo watermarks -->
+    <div aria-hidden="true" style="position:absolute;right:-60px;bottom:-40px;opacity:0.15;z-index:0;pointer-events:none;"><img src="images/black-logo.png" alt="" style="width:340px;height:auto;display:block;filter:invert(1);"></div>
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo logo--footer">
@@ -623,13 +514,15 @@
         <a href="index.html">Home</a>
         <a href="approach.html">Our Approach</a>
         <a href="companies.html">For Companies</a>
-        <a href="index.html#testimonials">Reviews</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#booking">Book a lesson</a>
+        <a href="south-africans.html">For South Africans</a>
+        <a href="english.html">Learn English</a>
+
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:judith@panoramic-learning.com">judith@panoramic-learning.com</a>
+        <a href="mailto:judith@panoramic-learning.com" style="white-space:nowrap;">judith@panoramic-learning.com</a>
+        <a href="tel:+31612345678" style="white-space:nowrap;">+31 6 12345678</a>
         <div class="social-btns social-btns--footer">
           <a href="https://www.facebook.com/panoramiclearning" target="_blank" rel="noopener" class="social-btn social-btn--fb" aria-label="Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
